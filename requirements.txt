@@ -1,0 +1,9 @@
+demucs==4.0.1
+essentia==2.1b6.dev1389
+eyed3==0.9.9
+ffmpeg==1.4.0
+librosa==0.11.0
+psycopg2-binary==2.9.11
+pyAudioAnalysis==0.3.14
+pydub==0.25.1
+torchcodec==0.11.0
