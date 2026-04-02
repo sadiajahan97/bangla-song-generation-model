@@ -19,13 +19,16 @@ Ensure you have the following dependencies installed (as listed in `requirements
 - `pyAudioAnalysis`: For audio segmentation.
 - `psycopg2-binary`: For PostgreSQL database connectivity.
 - `ffmpeg`: Required for audio transcoding.
+- `demucs`: For source (stem) separation.
+- `eyed3`: For handling MP3 metadata.
+- `torchcodec`: For optimized audio decoding and processing.
 
 ## Execution Order
 
 The scripts must be executed in the following sequence to ensure proper data flow and dependency management:
 
-1.  **`title.py`**: Initializes the `songs` table by extracting filenames from the `songs/` folder.
-2.  **`renaming.py`**: Standardizes original filenames in the `songs/` folder.
+1.  **`renaming.py`**: Standardizes original filenames in the `songs/` folder.
+2.  **`title.py`**: Initializes the `songs` table by extracting filenames from the `songs/` folder.
 3.  **`sampling.py`**: Resamples songs to 22.05 kHz WAV format and stores them in `sampled_songs/`.
 4.  **`segmentation.py`**: Slices sampled songs into overlapping 10-second segments stored in `segments/`.
 5.  **`segment_title.py`**: Initializes the `segments` table and links segments to their original songs.
