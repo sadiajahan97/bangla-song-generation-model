@@ -6,4 +6,5 @@ librosa==0.11.0
 psycopg2-binary==2.9.11
 pyAudioAnalysis==0.3.14
 pydub==0.25.1
+requests==2.33.1
 torchcodec==0.11.0

@@ -40,6 +40,7 @@ The scripts must be executed in the following sequence to ensure proper data flo
 9.  **`genre.py`**: Detects the musical genre of segments using pre-trained TensorFlow models and updates the `segments` table.
 10. **`stem_separation.py`**: Extracts vocal stems from normalized segments (using batch processing) and saves them in the `vocals/` folder.
 11. **`lyrics.py`**: Transcribes lyrics for the extracted vocal stems via a remote ASR API and updates the `segments` table.
+12. **`master_dataset.py`**: Consolidates all segment metadata (lyrics, genre, tempo, key) and normalized audio paths into a unified `dataset.jsonl` file.
 
 ## Database Configuration
 
