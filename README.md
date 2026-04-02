@@ -14,7 +14,7 @@ This project contains a suite of Python scripts designed to process audio files,
 Ensure you have the following dependencies installed (as listed in `requirements.txt`):
 
 - `librosa`: For audio sampling and BPM detection.
-- `essentia`: For musical key detection.
+- `essentia-tensorflow`: For musical key detection and genre classification.
 - `pydub`: For audio normalization.
 - `pyAudioAnalysis`: For audio segmentation.
 - `psycopg2-binary`: For PostgreSQL database connectivity.
@@ -35,6 +35,7 @@ The scripts must be executed in the following sequence to ensure proper data flo
 6.  **`normalization.py`**: Normalizes the audio levels of the segments and saves them to `normalized_segments/`.
 7.  **`tempo_bpm.py`**: Estimates the BPM of normalized segments and updates the `segments` table.
 8.  **`key.py`**: Detects the musical key of normalized segments and updates the `segments` table.
+9.  **`genre.py`**: Detects the musical genre of segments using pre-trained TensorFlow models and updates the `segments` table.
 
 ## Database Configuration
 
