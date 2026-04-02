@@ -12,7 +12,7 @@ def transcribe_lyrics():
         "user": "sadia-iffat-jahan"
     }
 
-    segments_folder = os.path.join(os.getcwd(), "normalized_segments")
+    vocals_folder = os.path.join(os.getcwd(), "vocals")
     api_url = "https://192.168.101.231:8569/transcribe"
 
     try:
@@ -22,14 +22,14 @@ def transcribe_lyrics():
         cur.execute("SELECT title FROM segments WHERE lyrics IS NULL OR lyrics = ''")
         to_process = {row[0] for row in cur.fetchall()}
 
-        all_files = [f for f in os.listdir(segments_folder) if f.lower().endswith('.wav')]
+        all_files = [f for f in os.listdir(vocals_folder) if f.lower().endswith('.wav')]
         files = [f for f in all_files if os.path.splitext(f)[0] in to_process]
 
         print(f"Processing {len(files)} segments via remote API...")
 
         for i, filename in enumerate(files, 1):
             title = os.path.splitext(filename)[0]
-            full_path = os.path.join(segments_folder, filename)
+            full_path = os.path.join(vocals_folder, filename)
 
             try:
                 with open(full_path, "rb") as audio_file:

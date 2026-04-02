@@ -8,6 +8,7 @@ This project contains a suite of Python scripts designed to process audio files,
 - `sampled_songs/`: Songs resampled to 22.05 kHz WAV format.
 - `segments/`: 10-second segments with 5-second overlap.
 - `normalized_segments/`: Final normalized audio segments.
+- `vocals/`: Extracted vocal stems for transcription.
 
 ## Prerequisites
 
@@ -37,7 +38,8 @@ The scripts must be executed in the following sequence to ensure proper data flo
 7.  **`tempo_bpm.py`**: Estimates the BPM of normalized segments and updates the `segments` table.
 8.  **`key.py`**: Detects the musical key of normalized segments and updates the `segments` table.
 9.  **`genre.py`**: Detects the musical genre of segments using pre-trained TensorFlow models and updates the `segments` table.
-10. **`lyrics.py`**: Transcribes lyrics for segments via a remote ASR API and updates the `segments` table.
+10. **`stem_separation.py`**: Extracts vocal stems from normalized segments (using batch processing) and saves them in the `vocals/` folder.
+11. **`lyrics.py`**: Transcribes lyrics for the extracted vocal stems via a remote ASR API and updates the `segments` table.
 
 ## Database Configuration
 
