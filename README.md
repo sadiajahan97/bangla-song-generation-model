@@ -22,6 +22,7 @@ Ensure you have the following dependencies installed (as listed in `requirements
 - `demucs`: For source (stem) separation.
 - `eyed3`: For handling MP3 metadata.
 - `torchcodec`: For optimized audio decoding and processing.
+- `requests`: For interacting with remote transcription APIs.
 
 ## Execution Order
 
@@ -36,6 +37,7 @@ The scripts must be executed in the following sequence to ensure proper data flo
 7.  **`tempo_bpm.py`**: Estimates the BPM of normalized segments and updates the `segments` table.
 8.  **`key.py`**: Detects the musical key of normalized segments and updates the `segments` table.
 9.  **`genre.py`**: Detects the musical genre of segments using pre-trained TensorFlow models and updates the `segments` table.
+10. **`lyrics.py`**: Transcribes lyrics for segments via a remote ASR API and updates the `segments` table.
 
 ## Database Configuration
 
