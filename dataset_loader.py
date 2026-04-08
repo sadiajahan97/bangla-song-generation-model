@@ -1,5 +1,4 @@
 import json
-import os
 from pathlib import Path
 
 import torch
@@ -73,7 +72,7 @@ class BanglaSongDataset(Dataset):
         if actual_t >= self.max_frames:
             mel = mel[:, :self.max_frames]
         else:
-            pad = torch.zeros(mel.shape[0], self.max_frames - actual_t)
+            pad = torch.full((mel.shape[0], self.max_frames - actual_t), mel.min())
             mel = torch.cat([mel, pad], dim=-1)
 
         return mel
